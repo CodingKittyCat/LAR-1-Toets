@@ -15,7 +15,7 @@ class PostsTableSeeder extends Seeder
     {
         // 1
         $posts = new Post();
-        $posts->user_id = 1;
+        $posts->user_id = 2;
         $posts->subject = "Cats";
         $posts->content = "A dog is man's best friend, but a cat is a person's best friend.";
         $posts->save();
