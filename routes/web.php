@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ForumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::resource('forum', ForumController::class);
+Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
+Route::get('/forum/create', [ForumController::class, 'create'])->name('forum.create');
+Route::get('/forum/edit/{id}', [ForumController::class, 'edit'])->name('forum.edit');
+Route::put('forum/{id}', [ForumController::class, 'update'])->name('forum.update');
 require __DIR__.'/auth.php';
